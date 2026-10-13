@@ -5,7 +5,6 @@ import { calculateCartTotal, type CartItem } from "@/lib/cart";
 
 export default function Home() {
   const [items, setItems] = useState<CartItem[]>([
-    { id: "1", name: "Premium CI Runner", price: 49.99, quantity: 2 },
     { id: "2", name: "Build Cache Volume", price: 15.0, quantity: 1 },
     { id: "3", name: "Static Asset CDN", price: 9.95, quantity: 1 },
   ]);
