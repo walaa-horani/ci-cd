@@ -27,9 +27,9 @@ export function calculateCartTotal(
     typeof cart === "number"
       ? cart
       : cart.reduce((sum, item) => {
-          const qty = item.quantity ?? 1;
-          return sum + item.price * qty;
-        }, 0);
+        const qty = item.quantity ?? 1;
+        return sum + item.price * qty;
+      }, 0);
 
   const subtotal = Math.max(0, Number.isFinite(rawSubtotal) ? rawSubtotal : 0);
   const safeDiscount = Number.isFinite(discountPercentage) ? discountPercentage : 0;
