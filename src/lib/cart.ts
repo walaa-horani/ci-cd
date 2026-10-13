@@ -27,13 +27,13 @@ export function calculateCartTotal(
     typeof cart === "number"
       ? cart
       : cart.reduce((sum, item) => {
-          const qty = item.quantity ?? 1;
-          return sum + item.price * qty;
-        }, 0);
+        const qty = item.quantity ?? 1;
+        return sum + item.price * qty;
+      }, 0);
 
   const subtotal = Math.max(0, Number.isFinite(rawSubtotal) ? rawSubtotal : 0);
   const safeDiscount = Number.isFinite(discountPercentage) ? discountPercentage : 0;
-  const clampedDiscount = Math.min(100, Math.max(0, safeDiscount));
+  const clampedDiscount = Math.min(200, Math.max(0, safeDiscount));
 
   const total = subtotal * (1 - clampedDiscount / 100);
   return Math.round((total + Number.EPSILON) * 100) / 100;
