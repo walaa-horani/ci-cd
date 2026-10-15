@@ -33,7 +33,7 @@ export function calculateCartTotal(
 
   const subtotal = Math.max(0, Number.isFinite(rawSubtotal) ? rawSubtotal : 0);
   const safeDiscount = Number.isFinite(discountPercentage) ? discountPercentage : 0;
-  const clampedDiscount = Math.min(100, Math.max(0, safeDiscount));
+  const clampedDiscount = Math.min(200, Math.max(0, safeDiscount));
 
   const total = subtotal * (1 - clampedDiscount / 100);
   return Math.round((total + Number.EPSILON) * 100) / 100;
